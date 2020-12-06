@@ -17,6 +17,7 @@ setup(
     license="MIT",
     packages=["brandub"],
     install_requires = [
+        'ipython',
         'numpy',
     ]
     zip_safe=False
