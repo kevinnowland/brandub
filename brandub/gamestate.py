@@ -1,6 +1,6 @@
 from .board import Board
 from .errors import InvalidTeamNameError
-from .movement import find_valid_moves
+from .valid_moves import find_valid_moves
 
 
 class GameState:
