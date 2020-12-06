@@ -1,10 +1,6 @@
+from .errors import InvalidTeamNameError
 from .rawboard import RawBoard
 import numpy as np
-
-
-class InvalidTeamNameError(Exception):
-    def __init__(self):
-        super().__init__("team name must be 'attack' or 'defense'")
 
 
 class Board:
@@ -80,3 +76,32 @@ class Board:
             return np.sum(self.raw_board[2]) == 0
         else:
             raise InvalidTeamNameError
+
+
+def get_initial_board(fully_validate_board=True):
+    """ get a board that is initialized for brandub """
+
+    indices = [
+        (0, 3, 0),
+        (0, 3, 1),
+        (0, 3, 5),
+        (0, 3, 6),
+        (0, 0, 3),
+        (0, 1, 3),
+        (0, 5, 3),
+        (0, 6, 3),
+        (1, 3, 2),
+        (1, 3, 4),
+        (1, 2, 3),
+        (1, 4, 3),
+        (2, 3, 3)
+    ]
+
+    x = np.zeros((3, 7, 7))
+    for i in indices:
+        x[i] = 1
+
+    raw_board = RawBoard(board_array=x,
+                         skip_checks=not fully_validate_board)
+
+    return Board(raw_board, fully_validate_board)
