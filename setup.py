@@ -12,7 +12,7 @@ setup(
     description="play brandub",
     long_description=long_description,
     long_description_content_type='text/markdown',
-    url="github.com/kevinnowland/brandub",
+    url="https://github.com/kevinnowland/brandub",
     author="Kevin Nowland",
     license="MIT",
     packages=["brandub"],
