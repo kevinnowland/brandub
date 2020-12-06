@@ -3,15 +3,14 @@ from .errors import InvalidMoveError
 from .gamehistory import GameHistory
 from .gamestate import GameState
 from .movement import move
-from Ipython.display import clear_output
+from IPython.display import clear_output
 
 
 class BrandubGame:
     """  object oriented class for playing a whole game """
 
-    def __init__(self, use_ipython=False):
+    def __init__(self):
 
-        self.__use_ipython = use_ipython
         initial_state = GameState(get_initial_board(), "attack")
         self.__game_history = GameHistory([initial_state], max_length=10)
 
@@ -47,10 +46,6 @@ class BrandubGame:
     def whose_turn(self):
         return self.game_history[-1].whose_turn
 
-    @property
-    def use_ipython(self):
-        return self.__use_ipython
-
     def move(self, piece_position, new_position):
         """ move a piece and change the game history """
         self.__game_history = move(piece_position,
@@ -62,8 +57,7 @@ class BrandubGame:
         really_quit = None
         while not self.game_over:
             try:
-                if self.use_ipython:
-                    clear_output()
+                clear_output()
                 self.print_board()
 
                 move_invalid = True
@@ -109,7 +103,7 @@ class BrandubGame:
                         print("not a valid move")
                         pass
             except KeyboardInterrupt:
-                really_quit = input("Are you sure you wnat to quit? (y/n):")
+                really_quit = input("\nAre you sure you wnat to quit? (y/n):")
                 if really_quit.lower() == 'y':
                     return None
                 else:
@@ -117,8 +111,7 @@ class BrandubGame:
                     pass
 
         if really_quit is None:
-            if self.use_ipython:
-                clear_output()
+            clear_output()
             self.print_board()
             if self.game_history.defense_victory:
                 msg = """Game over!
