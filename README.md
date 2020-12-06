@@ -6,9 +6,7 @@ A python package to play brandub.
 ## Installation
 
 ```bash
-git clone git@github.com:kevinnowland/brandub.git
-cd brandub
-pip install .
+pip install brandub
 ```
 
 ## Play a game
