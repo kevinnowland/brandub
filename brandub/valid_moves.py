@@ -1,5 +1,4 @@
-from .errors import InvalidMoveError
-from .board import Board
+import numpy as np
 
 
 def is_forest(position_2d):
@@ -73,4 +72,3 @@ def find_valid_moves(board, position):
         for dvec in direction_vectors
         for vec in check_direction(dvec)
     ]
-

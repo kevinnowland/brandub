@@ -1,6 +1,7 @@
 """define movement and such"""
 
 from .board import Board
+from .errors import InvalidMoveError
 from .gamehistory import GameHistory
 from .gamestate import GameState
 from .rawboard import RawBoard
