@@ -11,7 +11,7 @@ setup(
     version="0.1",
     description="play brandub",
     long_description=long_description,
-    long_description_content_type='text/markdown'
+    long_description_content_type='text/markdown',
     url="github.com/kevinnowland/brandub",
     author="Kevin Nowland",
     license="MIT",
@@ -19,6 +19,6 @@ setup(
     install_requires = [
         'ipython',
         'numpy',
-    ]
+    ],
     zip_safe=False
 )
