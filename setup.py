@@ -8,7 +8,7 @@ with open(path.join(this_directory, 'README.md'), encoding='utf-8') as f:
 
 setup(
     name="brandub",
-    version="0.1",
+    version="1.0",
     description="play brandub",
     long_description=long_description,
     long_description_content_type='text/markdown',
