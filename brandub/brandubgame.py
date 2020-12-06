@@ -103,7 +103,7 @@ class BrandubGame:
                         print("not a valid move")
                         pass
             except KeyboardInterrupt:
-                really_quit = input("\nAre you sure you wnat to quit? (y/n):")
+                really_quit = input("\nAre you sure you want to quit? (y/n):")
                 if really_quit.lower() == 'y':
                     return None
                 else:
