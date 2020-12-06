@@ -20,5 +20,6 @@ setup(
         'ipython',
         'numpy',
     ],
+    scripts=['bin/brandub'],
     zip_safe=False
 )

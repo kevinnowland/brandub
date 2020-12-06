@@ -13,13 +13,18 @@ pip install .
 
 ## Play a game
 
-To play a game instantiate a `BrandubGame` object and use the `run()` method.
+To play via the command line, simply run the `brandub` command.
+
+To play a game in a python terminal or ipython terminal, 
+instantiate a `BrandubGame` object and use the `run()` method.
 
 ```python
 > from brandub import BrandubGame
 > game = BrandubGame()
 > game.run()
 ```
+
+To exit either version, simply ctrl+c and enter 'y'.
 
 ## Rules
 
